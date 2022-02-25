@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Qr Scanner Generator</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="Home_Title">QR Encoder</string>
+    <string name="cameraButtonText">Scan QR Code</string>
+    <string name="genButtonText">Generate QR Code</string>
+</resources>

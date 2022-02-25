@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.myApp.qrscannergenerator.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_scanFragmentInput"
+            app:destination="@id/scanFragmentInput" />
+        <action
+            android:id="@+id/action_homeFragment_to_genFragmentInput"
+            app:destination="@id/genFragmentInput"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left" />
+    </fragment>
+    <fragment
+        android:id="@+id/genFragmentInput"
+        android:name="com.myApp.qrscannergenerator.GenFragmentInput"
+        android:label="Generate QR Code"
+        tools:layout="@layout/fragment_gen_input" >
+        <action
+            android:id="@+id/action_genFragmentInput_to_genFragmentOutput"
+            app:destination="@id/genFragmentOutput" />
+    </fragment>
+    <fragment
+        android:id="@+id/scanFragmentInput"
+        android:name="com.myApp.qrscannergenerator.ScanFragmentInput"
+        android:label="Scan QR Code"
+        tools:layout="@layout/fragment_scan_input" >
+        <action
+            android:id="@+id/action_scanFragmentInput_to_scanFragmentOutput"
+            app:destination="@id/scanFragmentOutput" />
+    </fragment>
+    <fragment
+        android:id="@+id/scanFragmentOutput"
+        android:name="com.myApp.qrscannergenerator.ScanFragmentOutput"
+        android:label="Decrypt QR Code"
+        tools:layout="@layout/fragment_scan_output" >
+        <argument
+            android:name="encryptedText"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/genFragmentOutput"
+        android:name="com.myApp.qrscannergenerator.GenFragmentOutput"
+        android:label="Generated QR Code"
+        tools:layout="@layout/fragment_gen_output" >
+        <argument
+            android:name="textToGen"
+            app:argType="string" />
+        <argument
+            android:name="key"
+            app:argType="string" />
+        <argument
+            android:name="isEncrypted"
+            app:argType="boolean" />
+    </fragment>
+</navigation>
